@@ -1,0 +1,7 @@
+{
+  "name": "MinuteurProjectIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
