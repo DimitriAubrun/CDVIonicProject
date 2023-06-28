@@ -1,5 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, inject, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {first, Subject} from "rxjs";
+
+export interface Entry {
+  created: Date;
+  id: string;
+}
+
+export interface TimeSpan {
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 @Component({
   selector: 'app-folder',
@@ -7,11 +19,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
-  public folder!: string;
-  private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
+
+
+  constructor() { }
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
   }
 }

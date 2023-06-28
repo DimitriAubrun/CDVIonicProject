@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'notes',
+    loadChildren: () => import('./pages/notes/notes.module').then( m => m.NotesPageModule)
+  },
+  {
+    path: 'geolocalisation',
+    loadChildren: () => import('./pages/geolocalisation/geolocalisation.module').then( m => m.GeolocalisationPageModule)
   }
 ];
 
