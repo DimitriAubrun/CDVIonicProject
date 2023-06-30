@@ -6,9 +6,22 @@ export class Note{
   title?: string;
   dateBegin?: Date;
   dateEnd?: Date;
+  desc?: string;
+  private _latitude?: number;
+  private _longitude?: number;
+
+
+  get latitude(): number {
+    return <number>this._latitude;
+  }
+
+
+  get longitude(): number {
+    return <number>this._longitude;
+  }
 
   isValid(){
-    return this.dateBegin && this.dateEnd && this.title;
+    return this.dateBegin && this.dateEnd && this.title && this.desc && this._latitude && this._longitude;
   }
 }
 
